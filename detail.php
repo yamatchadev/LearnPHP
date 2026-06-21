@@ -1,14 +1,15 @@
 <?php
-require_once 'logincheck.php'; // タイムライン同様にログインチェックを推奨
+require_once 'logincheck.php';
 require_once 'db.php';
 require_once 'newscheck.php';
 
 $post = null;
-
+$deleteurl = "";
+$deleteable = "false";
+$deleteclass = "hidden"; 
 if (isset($_GET['contentid'])) {
-    $contentid = htmlspecialchars($_GET['contentid']); // プレースホルダにバインドするため、ここではエスケープしない
-
-    // JOINを使って投稿と投稿者情報を一括取得
+    $contentid = htmlspecialchars($_GET['contentid']);
+    // JOINを使って投稿と投稿者情報を一括取得(AI)
     $stmt = $pdo->prepare(
         "SELECT posts.*, users.nickname, users.icon_path, users.username 
          FROM posts 
@@ -18,7 +19,7 @@ if (isset($_GET['contentid'])) {
     $stmt->execute([$contentid]);
     $post = $stmt->fetch();
     if($post){
-        $post['user_id'] = (int)$post['user_id']; // user_idを整数にキャスト
+        $post['user_id'] = (int)$post['user_id']; 
         $deleteable = isset($_SESSION['user_id']) && $_SESSION['user_id'] === $post['user_id'];
         if($deleteable){
             $deleteurl = "delete.php?contentid=" . $contentid;
@@ -36,7 +37,6 @@ if (isset($_GET['contentid'])) {
     exit;
 }
 
-// 該当する投稿がない場合はタイムラインに返すか、エラー表示
 if (!$post) {
     header('Location: timeline.php');
     exit;

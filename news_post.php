@@ -3,8 +3,7 @@ require_once 'logincheck.php';
 require_once 'db.php';
 require_once 'newscheck.php';
 
-// 管理者チェック（管理者のuser_idを直接指定）
-define('ADMIN_USER_ID', 24); // ← ここを管理者のuser_idに変更してください
+define('ADMIN_USER_ID', 24);
 
 if ($_SESSION['user_id'] !== ADMIN_USER_ID) {
     header('Location: timeline.php');
@@ -14,7 +13,6 @@ if ($_SESSION['user_id'] !== ADMIN_USER_ID) {
 $success = false;
 $error = '';
 
-// POST処理
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title   = trim($_POST['title'] ?? '');
     $content = trim($_POST['content'] ?? '');

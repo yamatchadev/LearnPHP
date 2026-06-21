@@ -43,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-// ───【追加】ログインユーザーの情報を取得 ───
 $user_stmt = $pdo->prepare("SELECT nickname, icon_path, username, email FROM users WHERE id = ?");
 $user_stmt->execute([$_SESSION['user_id']]);
 $current_user = $user_stmt->fetch();
