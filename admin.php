@@ -208,38 +208,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <main class="container">
     <div class="card">
-        <h2>ニュース投稿</h2>
+        <a href="news_post.php"><h2>ニュース投稿</h2></a>
+        <a href="articles/admin.php"><h2>新規記事作成</h2></a>
+        <a href="meijiro/admin.php"><h2>ユーザー削除</h2></a>
 
-        <?php if ($success): ?>
-            <div class="alert alert-success">投稿しました！</div>
-        <?php endif; ?>
-
-        <?php if ($error !== ''): ?>
-            <div class="alert alert-error"><?= htmlspecialchars($error) ?></div>
-        <?php endif; ?>
-
-        <form action="news_post.php" method="post">
-            <label for="title">タイトル</label>
-            <input
-                type="text"
-                id="title"
-                name="title"
-                placeholder="ニュースのタイトル"
-                value="<?= isset($_POST['title']) && !$success ? htmlspecialchars($_POST['title']) : '' ?>"
-            >
-
-            <label for="content">内容</label>
-            <textarea
-                id="content"
-                name="content"
-                placeholder="ニュースの内容を入力してください..."
-            ><?= isset($_POST['content']) && !$success ? htmlspecialchars($_POST['content']) : '' ?></textarea>
-
-            <button type="submit" id="submitBtn">投稿する</button>
-        </form>
-
-        <a href="admin.php" class="back-link">← 管理者ページに戻る</a>
-    </div>
+    </div> 
+<a href="timeline.php" class="back-link">← タイムラインに戻る</a>
 </main>
 
 <script>

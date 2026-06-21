@@ -386,7 +386,7 @@ $latest_id = !empty($posts) ? $posts[0]['id'] : 0;
 
         <header>
             <div id="header-top">
-                <h1><?= $recentnewsdate; ?> <?= $recentnews; ?><a href="./news.php">詳細</a></h1>
+                <h1><?= $recentnewsdate; ?> <?= $recentnews; ?><a href="<?= $recentnewsurl ?>">詳細</a></h1>
             </div>
 
             <div class="header-main-row">
