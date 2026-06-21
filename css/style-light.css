@@ -1,0 +1,16 @@
+:root {
+    --primary-color: #4F5D95;
+    --button-color: #4f5d95;
+    --bg-color: #d9e6fb;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --border-color: #e2e8f0;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /*transition: background-color 0.3s, color 0.3s;*/
+}
+/* その他、全モード共通、またはライトモード用のスタイル */

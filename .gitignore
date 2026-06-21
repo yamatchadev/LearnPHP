@@ -1,0 +1,6 @@
+/vendor/
+/meijiro/
+/trush/
+/uploads/icons/
+db.php
+secret.php

@@ -1,0 +1,16 @@
+:root {
+            --primary-color: #f7fcfc;
+            --button-color: #4f5d95;
+            --bg-color: #1a202c;
+            --card-bg: #2d3748;
+            --text-color: #f7fafc;
+            --border-color: #5f6d83;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /*transition: background-color 0.3s, color 0.3s;*/
+}
+/* その他、ダークモード用のスタイル */
