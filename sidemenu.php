@@ -9,6 +9,7 @@
                 <li><a href="change_password.php">パスワード変更</a></li>
                 <li><a href="contact.php">お問い合わせ・ヘルプセンター</a></li>
                 <li><a href="news_post.php">管理者ページ</a></li>
+                <li><a href="https://github.com/yamatchadev/LearnPHP/">GitHub</a></li>
                 <li><a href="logout.php">ログアウト</a></li>
                 <li class="danger"><a href="delete_account.php">アカウント削除</a></li>
             </ul>
