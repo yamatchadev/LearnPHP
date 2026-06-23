@@ -61,7 +61,6 @@ $latest_id = !empty($posts) ? $posts[0]['id'] : 0;
         <title>タイムライン - LearnPHP</title>
                 
         <link rel="stylesheet" id="theme-link" href="css/style-light.css">
-        
 
         <style>
             body {
