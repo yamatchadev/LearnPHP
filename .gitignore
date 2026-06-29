@@ -4,3 +4,5 @@
 /uploads/icons/
 db.php
 secret.php
+gettoken.php
+callback.php
